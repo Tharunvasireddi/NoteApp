@@ -26,11 +26,12 @@ document.addEventListener("DOMContentLoaded",()=>{
         }
         else if(e.target.tagName === "P"){
             notes = document.querySelectorAll(".input");
-            notes.forEach(nt =>{
-                nt.onKeyUp = function(){
+            notes.forEach(nt => {
+                nt.addEventListener("input", function() {
                     updateStorage();
-                }
-            })
+                });
+            });
+            
         }
     })
 })
